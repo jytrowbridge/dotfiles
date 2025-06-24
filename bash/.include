@@ -1,0 +1,79 @@
+######################################################################
+  ALIASES 
+##################################################################
+
+alias gs="git status"
+alias greset="git reset --hard HEAD && git clean -fd"
+alias avenv="source .venv/bin/activate"
+alias ffcss="cd /home/jack/.mozilla/firefox"
+alias savestash="save_to_stash"
+alias pvenv="source .venv/bin/activate"
+
+save_to_stash() {
+	echo "Attempting to stash changes and reapply same" &&
+	git stash --include-untracked -m "$1" &&
+	echo -e "Changes stashed.\nRestoring changes just stashed..." &&
+	git stash apply stash@{0} > /dev/null 2>&1 &&
+	echo "Changes restored"
+}
+
+eval "$(direnv hook bash)"
+
+#######################################################################
+  TASKWARRIOR
+##################################################################
+
+alias in="task add +in"
+export PS1='$(task +in +PENDING count) '$PS1
+alias rnd='task add +rnd +next'
+
+tickle () {
+    deadline=$1
+    shift
+    in +tickle wait:$deadline $@
+}
+alias tick=tickle
+
+movenext () {
+  taskid=$1
+  shift
+  task modify $taskid $@
+}
+
+alias think='tickle +1d'
+
+#######################################################################
+  MISC INITS  
+##################################################################
+
+#-- starship -------------------
+  eval "$(starship init bash)"
+#-----------
+
+#-- conda ----------------------
+  __conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+  else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+      . "/usr/etc/profile.d/conda.sh"
+    else
+      export PATH="/usr/bin:$PATH"
+    fi
+  fi
+  unset __conda_setup
+#-----------
+
+
+#- asdf --------------------
+  . <(asdf completion bash)
+## end: completion.bash ###"
+#-----------
+
+
+#-- fzf---------------------
+  #eval "$(fzf --bash)"
+  export FZF_DISABLE_HISTORY="true"
+  eval "$(cat ~/tmp/fzf-bash.sh)"
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+#-----------

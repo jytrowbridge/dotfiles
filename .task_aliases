@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# taskwarrior stuff (extract pls)
+alias in="task add +in"
+export PS1='$(task +in +PENDING count) '$PS1
+alias rnd='task add +rnd +next'
+
+tickle () {
+    deadline=$1
+    shift
+    in +tickle wait:$deadline $@
+}
+alias tick=tickle
+
+movenext () {
+  taskid=$1
+  shift
+  task modify $taskid $@
+}
+
+alias think='tickle +1d'
+
+
