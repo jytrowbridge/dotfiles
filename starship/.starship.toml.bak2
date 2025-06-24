@@ -1,0 +1,5 @@
+format= '$all'
+
+[username]
+style_user = 'bg:red fg:blue'
+format = '[$user]($style) in '
