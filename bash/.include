@@ -1,5 +1,5 @@
 ######################################################################
-  ALIASES 
+# ALIASES 
 ##################################################################
 
 alias gs="git status"
@@ -17,10 +17,8 @@ save_to_stash() {
 	echo "Changes restored"
 }
 
-eval "$(direnv hook bash)"
-
 #######################################################################
-  TASKWARRIOR
+# TASKWARRIOR
 ##################################################################
 
 alias in="task add +in"
@@ -43,10 +41,11 @@ movenext () {
 alias think='tickle +1d'
 
 #######################################################################
-  MISC INITS  
+# MISC INITS  
 ##################################################################
 
 #-- starship -------------------
+  export STARSHIP_CONFIG=~/.starship.toml
   eval "$(starship init bash)"
 #-----------
 
@@ -66,14 +65,14 @@ alias think='tickle +1d'
 
 
 #- asdf --------------------
-  . <(asdf completion bash)
+# . <(asdf completion bash)
 ## end: completion.bash ###"
 #-----------
 
 
 #-- fzf---------------------
   #eval "$(fzf --bash)"
+  #eval "$(cat ~/tmp/fzf-bash.sh)"
   export FZF_DISABLE_HISTORY="true"
-  eval "$(cat ~/tmp/fzf-bash.sh)"
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 #-----------

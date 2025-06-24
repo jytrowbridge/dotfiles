@@ -27,6 +27,6 @@ fi
 unset rc
 
 # include .bashrc_aliases if it exists
-if [ -f $HOME/dotfiles/.include ]; then
-    . $HOME/dotfiles/.include
+if [ -f $HOME/dotfiles/bash/.include ]; then
+    . $HOME/dotfiles/bash/.include
 fi
