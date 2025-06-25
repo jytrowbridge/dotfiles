@@ -33,7 +33,7 @@ palette = 'catppuccin_mocha'
 [hostname]
 ssh_symbol = "  "
 style = "bg:peach fg:crust"
-format="[$ssh_symbol$hostname]($style)"
+format="[@$hostname$ssh_symbol]($style)"
 
 [os]
 disabled = true
