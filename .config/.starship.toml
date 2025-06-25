@@ -12,6 +12,7 @@ $cmd_duration\
 $time\
 $username\
 $hostname\
+$localip\
 $line_break\
 $character\
 """
@@ -128,8 +129,14 @@ disabled = false
 format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)'
 
 [hostname]
-format = '[@$hostname$ssh_symbol](fg:foreground bg:box)[](fg:box) '
+format = '[@$hostname$ssh_symbol](fg:foreground bg:box)[](fg:box)'
 ssh_symbol = "  "
+
+[localip]
+format = '[─](fg:current_line)[](fg:cyan)[󱦂 ](fg:primary bg:cyan)[](fg:cyan bg:box)[ $localipv4 ](fg:foreground bg:box)[](fg:box) '
+ssh_only = true
+disabled = false
+
 
 [character]
 format = """

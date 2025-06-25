@@ -4,10 +4,10 @@
 
 alias gs="git status"
 alias greset="git reset --hard HEAD && git clean -fd"
-alias avenv="source .venv/bin/activate"
 alias ffcss="cd /home/jack/.mozilla/firefox"
 alias savestash="save_to_stash"
 alias pvenv="source .venv/bin/activate"
+alias ll="ls -al"
 
 save_to_stash() {
 	echo "Attempting to stash changes and reapply same" &&
@@ -45,7 +45,7 @@ alias think='tickle +1d'
 ##################################################################
 
 #-- starship -------------------
-  export STARSHIP_CONFIG=~/.starship.toml
+  export STARSHIP_CONFIG=~/.config/.starship.toml
   eval "$(starship init bash)"
 #-----------
 
