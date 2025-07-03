@@ -4,7 +4,7 @@ SELECTION="$(printf "1 - Lock\n2 - Suspend\n3 - Log out\n4 - Reboot\n5 - Reboot 
 
 case $SELECTION in
 	*"Lock")
-		~/tmp/lock.sh;;
+		~/.config/scripts/lock.sh;;
 	*"Suspend")
 		systemctl suspend;;
 	*"Log out")

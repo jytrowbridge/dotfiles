@@ -118,8 +118,8 @@ button:hover {
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background: transparent;
+    color: #ffffff;
 }
 
 #battery.charging, #battery.plugged {
@@ -169,7 +169,7 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
+    background: transparent; 
     color: #000000;
 }
 
@@ -182,11 +182,11 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+  background: transparent; 
 }
 
 #network {
-    background-color: #2980b9;
+    background: transparent;
 }
 
 #network.disconnected {
@@ -250,12 +250,12 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background: transparent;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background: transparent;
+    color: #ffffff;
 }
 
 #mpd {
