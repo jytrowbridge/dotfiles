@@ -4,3 +4,6 @@
 [submodule "fuzzel/.config/fuzzel/themes/dracula"]
 	path = fuzzel/.config/fuzzel/themes/dracula
 	url = https://github.com/dracula/fuzzel.git
+[submodule "rofi/.config/rofi/themes/dracula"]
+	path = rofi/.config/rofi/themes/dracula
+	url = https://github.com/dracula/rofi
