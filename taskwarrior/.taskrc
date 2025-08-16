@@ -1,0 +1,81 @@
+# [Created by task 3.4.1 7/4/2025 15:31:37]
+data.location=/home/jack/.task
+news.version=3.4.1
+
+# To use the default location of the XDG directories,
+# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
+
+#data.location=~/.local/share/task
+#hooks.location=~/.config/task/hooks
+
+# Color theme (uncomment one to use)
+#include light-16.theme
+#include light-256.theme
+include bubblegum-256.theme
+#include dark-16.theme
+#include dark-256.theme
+#include dark-red-256.theme
+#include dark-green-256.theme
+#include dark-blue-256.theme
+#include dark-violets-256.theme
+#include dark-yellow-green.theme
+#include dark-gray-256.theme
+#include dark-gray-blue-256.theme
+#include solarized-dark-256.theme
+#include solarized-light-256.theme
+#include no-color.theme
+
+
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
+
+report.in.columns = id,description
+report.in.description = Inbox
+report.in.filter = status:pending limit:page (+in)
+report.in.labels = ID,Description
+
+report.onlynext.columns=id,project,description.combined,tags,brainpower,estimate
+report.onlynext.label=Custom next
+report.onlynext.filter = +PENDING +next
+report.onlynext.labels = ID,Proj,Desc,Tags,Brain,Est
+report.onlynext.sort = project-,priority-
+
+#
+
+# source: https://github.com/hamlinux/taskwarrior-GTD/blob/master/taskrc
+#Brain Power
+
+uda.brainpower.type=string
+uda.brainpower.label=Brainpower
+uda.brainpower.values=H,M,L
+uda.brainpower.default=M
+
+#Reports
+
+#Next
+report.next.description     = Most urgent tasks
+report.next.columns         = id,urgency,depends,priority,project,tags,recur,scheduled.countdown,due.remaining,until.remaining,description,brainpower
+report.next.filter          = status:pending -sdm
+report.next.labels          = ID,Urgency,Depends,Priority,Project,Tag,Recur,Scheduled,Due,Until,Description,Brainpower
+report.next.sort            = project-,brainpower+,priority-,urgency-
+
+#Someday/Maybe
+report.sdm.description     = Someday/Maybe
+report.sdm.columns         = id,urgency,depends,priority,project,tags,recur,scheduled.countdown,due.remaining,until.remaining,description,brainpower
+report.sdm.filter          = status:pending +sdm
+report.sdm.labels          = ID,Urgency,Depends,Priority,Project,Tag,Recur,Scheduled,Due,Until,Description,Brainpower
+
+#No Next action
+report.nna.description     = No Next Action
+report.nna.columns         = project
+report.nna.filter          = +PENDING +READY -next -waiting -sdm
+report.nna.labels          = Project
+
+#Estimate
+
+uda.estimate.type=numeric
+uda.estimate.label=Estimate

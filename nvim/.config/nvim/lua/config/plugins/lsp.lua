@@ -19,6 +19,12 @@ return {
         filetypes = { "lua", "python" },
         root_markers = { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" }
       })
+      vim.lsp.enable('jedi_language_server')
+      vim.lsp.config('jedi_language_server', {
+        cmd = { "jedi-language-server" },
+        filetypes =  { "python" },
+        root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" }
+      })
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
         callback = function(args)

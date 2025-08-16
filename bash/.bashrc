@@ -30,3 +30,6 @@ unset rc
 if [ -f $HOME/dotfiles/includes/.bash-include ]; then
     . $HOME/dotfiles/includes/.bash-include
 fi
+eval "$(direnv hook bash)"
+
+export PYTHONPATH=$PYTHONPATH:/home/jack/Projects/ankivocab

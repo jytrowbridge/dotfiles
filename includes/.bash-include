@@ -22,7 +22,6 @@ save_to_stash() {
 ##################################################################
 
 alias in="task add +in"
-export PS1='$(task +in +PENDING count) '$PS1
 alias rnd='task add +rnd +next'
 
 tickle () {
@@ -49,30 +48,20 @@ alias think='tickle +1d'
   eval "$(starship init bash)"
 #-----------
 
-#-- conda ----------------------
-  __conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-  else
-    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-      . "/usr/etc/profile.d/conda.sh"
-    else
-      export PATH="/usr/bin:$PATH"
-    fi
-  fi
-  unset __conda_setup
-#-----------
-
-
-#- asdf --------------------
-# . <(asdf completion bash)
-## end: completion.bash ###"
-#-----------
-
-
 #-- fzf---------------------
-  #eval "$(fzf --bash)"
+  eval "$(fzf --bash)"
   #eval "$(cat ~/tmp/fzf-bash.sh)"
   export FZF_DISABLE_HISTORY="true"
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 #-----------
+
+  
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
+
+#######################################################################
+# ENVIRONMENT VARIABLES
+##################################################################
+export ANKI_VOCAB_DECK='vocab'
+export ANKI_VOCAB_SERVER='https://anki.jytrow.com'

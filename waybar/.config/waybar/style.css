@@ -215,8 +215,7 @@ label:focus {
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background: transparent;
     min-width: 100px;
 }
 
@@ -237,7 +236,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background: transparent
 }
 
 #tray > .passive {
@@ -327,3 +326,33 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#workspaces {
+    background: transparent
+}
+
+#workspaces button {
+    background: transparent
+}
+
+#workspaces button.active {
+  color: gray
+}
+
+#workspaces button.focused {
+    color: white;
+    box-shadow: none;
+    background: transparent
+}
+
+
+#workspaces button.focused#niri-workspace-scratch{
+  color: red
+}
+
+#workspaces button.empty#niri-workspace-scratch{
+  opacity: 0.5
+}
+
+
+

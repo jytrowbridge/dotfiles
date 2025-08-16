@@ -1,12 +1,9 @@
 format = """
 [╭](fg:current_line)\
+$custom\
 $directory\
 $git_branch\
 $fill\
-$nodejs\
-$dotnet\
-$python\
-$java\
 $c\
 $cmd_duration\
 $time\
@@ -19,6 +16,16 @@ $character\
 
 palette = 'dracula'
 add_newline = true
+
+[custom.tasks_in]
+command = 'task +in +PENDING count'
+when = "which task"
+format = '[─](fg:current_line)[](fg:cyan)[ ](fg:primary bg:cyan)[](fg:cyan bg:box)[ $output](fg:foreground bg:box)'
+
+[custom.tasks_next]
+command = 'task +next +PENDING count'
+when = "which task"
+format = '[-$output](fg:foreground bg:box)[](fg:box)'
 
 [palettes.dracula]
 foreground = '#F8F8F2'
