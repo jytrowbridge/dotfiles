@@ -11,19 +11,21 @@ return {
   init = function()
     vim.g.vimwiki_list = {
       {
-        path = "~/syncthing/Journal/Wiki/",
+        path = "~/syncthing/Wiki/",
         syntax = "markdown",
         ext = "md",
-        index = "_index"
+        index = "_index",
+        auto_tag = 1
       },
       {
         path = "~/.nb/home",
         syntax = "markdown",
         ext = "md",
-        index = "_index"
+        index = "_index",
+        auto_tag = 1
       },
     }
     vim.g.vimwiki_global_ext = 0
-  end,
+  end
 }
 }

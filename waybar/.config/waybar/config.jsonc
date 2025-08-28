@@ -11,10 +11,11 @@
         "custom/media"
     ],
     "modules-center": [
-        "clock",
+        "clock"
     ],
     "modules-right": [
-        "mpd",
+//        "mpd",
+        "custom/baseball",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -222,6 +223,15 @@
         "format": "{text}",
         "interval": 30,
         "exec": "tailscale status > /dev/null && echo '  '"
+    },
+    "custom/baseball":{
+        "return-type": "json",
+        "on-click": "$HOME/.config/waybar/metsStream.sh",
+        "on-click-right": "$HOME/.config/waybar/metsRecap.sh", 
+        "format": "{text}",
+        "interval": 900,
+        "exec": "$HOME/.config/waybar/baseball.sh",
+        "tooltip": true
     },
     "custom/media": {
         "format": "{text}",
