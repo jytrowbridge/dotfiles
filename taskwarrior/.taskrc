@@ -11,8 +11,8 @@ news.version=3.4.1
 # Color theme (uncomment one to use)
 #include light-16.theme
 #include light-256.theme
-include bubblegum-256.theme
-#include dark-16.theme
+#include bubblegum-256.theme
+include dark-16.theme
 #include dark-256.theme
 #include dark-red-256.theme
 #include dark-green-256.theme
@@ -21,7 +21,7 @@ include bubblegum-256.theme
 #include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
-#include solarized-dark-256.theme
+# include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
@@ -38,10 +38,10 @@ report.in.description = Inbox
 report.in.filter = status:pending limit:page (+in)
 report.in.labels = ID,Description
 
-report.onlynext.columns=id,project,description.combined,tags,brainpower,estimate
+report.onlynext.columns=id,project,description.combined,tags,due,brainpower,estimate
 report.onlynext.label=Custom next
 report.onlynext.filter = +PENDING +next
-report.onlynext.labels = ID,Proj,Desc,Tags,Brain,Est
+report.onlynext.labels = ID,Proj,Desc,Tags,Due,Brain,Est
 report.onlynext.sort = project-,priority-
 
 #

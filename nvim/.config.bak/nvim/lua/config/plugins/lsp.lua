@@ -16,15 +16,16 @@ return {
       vim.lsp.enable('lua_ls')
       vim.lsp.config('lua_ls', {
         cmd = { 'lua-language-server', '--logpath=/home/jack/applogs/lua_ls' },
-        filetypes = { "lua", "python" },
+        filetypes = { "lua" },
         root_markers = { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" }
       })
-      vim.lsp.enable('jedi_language_server')
+      --vim.lsp.enable('jedi_language_server')
       vim.lsp.config('jedi_language_server', {
         cmd = { "jedi-language-server" },
-        filetypes =  { "python" },
+        filetypes = { "python" },
         root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" }
       })
+      vim.lsp.enable('pylsp')
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
         callback = function(args)
@@ -39,7 +40,7 @@ return {
             -- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
             -- client.server_capabilities.completionProvider.triggerCharacters = chars
 
-            vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+            --vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
           end
 
           -- Auto-format ("lint") on save.

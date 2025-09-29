@@ -1,19 +1,15 @@
-require("config.lazy")
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+vim.g.have_nerd_font = true
 
-vim.o.tabstop = 2
-vim.o.expandtab = true
-vim.o.softtabstop = 2
-vim.o.shiftwidth = 2
-vim.o.number = true
+require 'options'
+require 'keymaps'
+require 'autocommands'
+require 'lazy-init'
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking text',
-  group = vim.api.nvim_create_augroup('highlight-yank', {clear = true}),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
-print "hello world"
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et

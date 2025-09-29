@@ -32,7 +32,8 @@ foreground = '#F8F8F2'
 background = '#282A36'
 current_line = '#44475A'
 primary = '#1E1F29'
-box = '#44475A'
+#box = '#44475A'
+box = '#8d8d8d'
 blue	= '#6272A4'
 cyan = '#8BE9FD'
 green	= '#50FA7B'
@@ -148,5 +149,5 @@ disabled = false
 [character]
 format = """
 [╰─$symbol](fg:current_line) """
-success_symbol = '[  ](fg:foreground)'
-error_symbol = '[ 󰚌 ](fg:white)'
+success_symbol = '[  ](fg:box)'
+error_symbol = '[ 󰚌 ](fg:box)'

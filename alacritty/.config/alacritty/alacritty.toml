@@ -19,7 +19,7 @@ style = "Regular"
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/dracula.toml"
+    "~/dotfiles/alacritty/.config/alacritty/themes/_current.toml"
 ]
 
 [window]
