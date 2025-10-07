@@ -4,8 +4,8 @@ m.mason_dependencies = {
   { 'isort' },
   { 'write-good' },
   { 'proselint' },
+  -- { 'csharpier' },
 }
-
 m.configure = function()
   local nl = require 'null-ls'
   nl.setup {
@@ -18,6 +18,7 @@ m.configure = function()
       nl.builtins.code_actions.proselint,
       nl.builtins.diagnostics.proselint,
       nl.builtins.diagnostics.write_good,
+      -- nl.builtins.formatting.csharpier,
     },
   }
 end

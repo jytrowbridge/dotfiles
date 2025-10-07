@@ -51,7 +51,7 @@ alias think='tickle +1d'
 #-- fzf---------------------
   eval "$(fzf --bash)"
   #eval "$(cat ~/tmp/fzf-bash.sh)"
-  export FZF_DISABLE_HISTORY="true"
+  # export FZF_DISABLE_HISTORY="true"
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 #-----------
 
