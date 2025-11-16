@@ -1,5 +1,6 @@
 return {
   'seblyng/roslyn.nvim',
+  enabled = false,
   ---@module 'roslyn.config'
   ---@type RoslynNvimConfig
   opts = {
