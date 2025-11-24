@@ -12,10 +12,11 @@
     ],
     "modules-center": [
         "clock"
+        // "custom/weather"
     ],
     "modules-right": [
 //        "mpd",
-        "custom/baseball",
+        // "custom/baseball",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -233,6 +234,13 @@
         "exec": "$HOME/.config/waybar/baseball.sh",
         "tooltip": true
     },
+    "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar",
+    "return-type": "json"
+},
     "custom/media": {
         "format": "{text}",
 //        "return-type": "json",

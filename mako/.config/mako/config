@@ -1,23 +1,23 @@
-background-color=#1f1f38
-text-color=#c8c093
-border-color=#c0a36e
 border-radius=5
 font=Monofur Nerd Font 14
-width=300
+width=200
 padding=20
 anchor=top-right
-text-alignment=center
+text-alignment=left
 margin=5
 border-size=2
 default-timeout=5000
 progress-color=#282a36
 history=1
 
-[urgency=low]
-border-color=#282a36
 
-[urgency=normal]
-border-color=#76946a
+
+# Colors
+
+background-color=#eff1f5
+text-color=#4c4f69
+border-color=#7287fd
+progress-color=over #ccd0da
 
 [urgency=high]
-border-color=#e82424
+border-color=#fe640b

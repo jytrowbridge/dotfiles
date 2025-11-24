@@ -8,6 +8,8 @@ alias ffcss="cd /home/jack/.mozilla/firefox"
 alias savestash="save_to_stash"
 alias pvenv="source .venv/bin/activate"
 alias ll="ls -al"
+alias ww="cd ~/Documents/Wikis/Wiki/"
+alias wo="cd ~/Documents/Wikis/"
 
 save_to_stash() {
 	echo "Attempting to stash changes and reapply same" &&
@@ -51,13 +53,15 @@ alias think='tickle +1d'
 #-- fzf---------------------
   eval "$(fzf --bash)"
   #eval "$(cat ~/tmp/fzf-bash.sh)"
-  # export FZF_DISABLE_HISTORY="true"
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  export FZF_DISABLE_HISTORY="true"
+  # export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 #-----------
 
   
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
+
+export PATH=$HOME/.dotnet/tools:$PATH
 
 
 #######################################################################
@@ -65,3 +69,9 @@ alias think='tickle +1d'
 ##################################################################
 export ANKI_VOCAB_DECK='vocab'
 export ANKI_VOCAB_SERVER='https://anki.jytrow.com'
+
+
+shopt -s histappend
+export HISTSIZE=10000
+export HISTFILESIZE=100000000
+

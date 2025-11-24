@@ -1,0 +1,207 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+      \textbf{\#1} \\
+      \textit{\small#2}
+}
+
+\newcommand{\employerSection}[2]{
+    \item
+      \textbf{#1} \\
+      \textit{#2}
+}
+\newcommand{\positionSection}[2]{
+    \item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \large#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\sus}[1]{\textcolor{RubineRed}{#1}}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Milo Trowbridge} \\ \vspace{1pt}
+    \small 774-392-3781 $|$\
+    \href{mailto:jack@jytrow.com}{\underline{jack@jytrow.com}}\
+    adfasdf $|$
+\end{center}
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C\#, Python, JavaScript/Typescript, HTML/CSS, Bash, SQL} \\
+     \textbf{Frameworks}{: React, ASP.NET} \\
+     \textbf{Developer Tools}{: Git, Docker, Neovim, OpenAI Codex} \\
+     \textbf{Other}{: Linux, Unity Game Engine, Socket.IO, Informatica} \\ 
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \employerSection
+      {Oculomotor Technologies}
+      {Small health-tech startup that developed the only FDA-cleared VR vision therapy for convergence insufficiency. Primarily worked on the VR software, using Unity Game Engine and C\#}
+    \positionSection
+        {Software Developer}{October 2023 - May 2025}
+    \resumeItemListStart
+        \resumeItem{Independently overhauled a Unity/C\# VR vision therapy application to integrate with a Socket.IO-based backend, removing dependency on a companion Android app}
+        \resumeItem{Developed a clinician-facing React/TypeScript web app as a key member of a small, versatile team}
+        \resumeItem{Created a React Native Android wrapper for the web app; implemented custom API to enable interaction with physical hardware}
+        \resumeItem{Collaborated with clinicians to accurately translate traditionally analog vision tests into a Unity/C\# application}
+        \resumeItem{Extended FastAPI backend to enable device log caching, support ticket management, and device registration}
+        \resumeItem{Led discovery and implementation of third-party MDM platforms, engaging with vendors to evaluate features, APIs, rollout timelines, and long-term viability}
+    \resumeItemListEnd
+
+     \positionSection
+        {Game Developer}{October 2020 - September 2023}
+    \resumeItemListStart
+        \resumeItem{Designed and implemented a VR vision therapy application in Unity with C\#, leveraging eye-tracking hardware to analyze eye movements, contributing to an FDA 510(k) cleared therapy platform}
+        \resumeItem{Developed gameplay integrated into therapy with real-time audio/visual feedback and in-game rewards to incentivize improved exercise performance}
+        \resumeItem{Ensured secure transfer and handling of HIPAA-protected medical data}
+        \resumeItem{Refactored codebase to transition from a computer-tethered headset to a standalone device; developed a companion Android app enabling real-time control and data visualization}
+        \resumeItem{Led customer communication to demonstrate product functionality, gather feedback, and identify bugs, contributing to continuous product improvement}
+        \resumeItem{Wrote technical documentation and assisted with project traceability}
+    \resumeItemListEnd
+
+    \employerSection
+      {Eccella Corporation (Acquired by NGData)}
+      {Startup providing Extract-Transform-Load (ETL) and customer data solutions to a variety of clients}
+    \positionSection
+        {Consultant}{June 2018 - December 2019}
+    \resumeItemListStart
+        \resumeItem{Led team in closing out long-running project; reviewed code, managed communications with client, and ensured project timeline was met}
+        \resumeItem{Onboarded dozens of clients for a financial solutions company, tailoring ETL code to match each client’s needs}
+        \resumeItem{Worked on proprietary Customer Data Platform for hospitality industry client, collecting and analyzing customer behavior data to create personalized marketing emails}
+    \resumeItemListEnd
+
+     \positionSection
+        {Analyst}{June 2016 - May 2018}
+    \resumeItemListStart
+        \resumeItem{Developed and maintained ETL inbound and outbound workflows using Informatica and SQL for a healthcare client, working closely with QA team to deliver solution that handled sensitive HIPAA-protected data}
+        \resumeItem{Wrote technical documentation, acted as SME, and led knowledge-transfer to client}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Wesleyan University}{Middletown, CT}
+      {Bachelor of Arts in Computer Science and Mathematics}{Aug. 2012 -- May 2016}
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
+

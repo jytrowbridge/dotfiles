@@ -36,6 +36,19 @@ return {
       },
     },
   },
+  ltex = {
+    cmd_env = { JAVA_OPTS = '-Djdk.xml.totalEntitySizeLimit=0' },
+    enabled = false,
+    settings = {
+      ltex = {
+        -- checkFrequency = 'save',
+        diagnosticsDelay = 2,
+        sentenceCacheSize = 10000,
+        -- language = 'en-US',
+      },
+    },
+  },
+  texlab = {},
   -- roslyn = {},
   -- settings = {
   --   filetypes = { 'cs' },

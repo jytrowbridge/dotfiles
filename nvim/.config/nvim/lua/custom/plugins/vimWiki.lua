@@ -9,19 +9,19 @@ return {
   init = function()
     vim.g.vimwiki_list = {
       {
-        path = '~/syncthing/Wiki/',
+        path = '~/Documents/Wikis/Wiki/',
         syntax = 'markdown',
         ext = 'md',
         auto_tag = 1,
       },
       {
-        path = '~/syncthing/MediaWiki/',
+        path = '~/Documents/Wikis/MediaWiki/',
         syntax = 'markdown',
         ext = 'md',
         auto_tag = 1,
       },
       {
-        path = '~/syncthing/PersonalWiki/',
+        path = '~/Documents/Wikis/PersonalWiki/',
         syntax = 'markdown',
         ext = 'md',
         auto_tag = 1,
